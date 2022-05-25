@@ -1,0 +1,1 @@
+const e={key:"v-098a95ff",path:"/gui/BlockType.html",title:"BlockType \u7C7B\u578B",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1653470949e3,contributors:[{name:"\u5B8B\u5B50\u7FA1",email:"zpsong_universe@163.com",commits:1}]},filePathRelative:"gui/BlockType.md"};export{e as data};
