@@ -1,4 +1,4 @@
-import{_ as n,e as s}from"./app.de48b5db.js";const a={},e=s(`<h1 id="blocktype-\u7C7B\u578B" tabindex="-1"><a class="header-anchor" href="#blocktype-\u7C7B\u578B" aria-hidden="true">#</a> BlockType \u7C7B\u578B</h1><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">const</span> BlockType <span class="token operator">=</span> <span class="token punctuation">{</span>
+import{_ as n,e as s}from"./app.0c97845c.js";const a={},e=s(`<h1 id="blocktype-\u7C7B\u578B" tabindex="-1"><a class="header-anchor" href="#blocktype-\u7C7B\u578B" aria-hidden="true">#</a> BlockType \u7C7B\u578B</h1><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">const</span> BlockType <span class="token operator">=</span> <span class="token punctuation">{</span>
     <span class="token doc-comment comment">/**
      * Boolean reporter with hexagonal shape
      */</span>
