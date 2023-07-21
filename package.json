@@ -19,7 +19,7 @@
     "build": "vitepress build",
     "serve": "vitepress serve",
     "predeploy": "npm run build",
-    "deply": "gh-pages -d build"
+    "deply": "gh-pages -d .vitepress/dist"
   },
   "dependencies": {
     "dayjs": "^1.11.7",
