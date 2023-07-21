@@ -426,24 +426,24 @@ window.addEventListener('DOMContentLoaded', () => {
 
 [node-download]: https://nodejs.org/en/download/
 
-[advanced-installation]: ./installation.md
+<!-- [advanced-installation]: ./installation.md -->
 [package-scripts]: https://docs.npmjs.com/cli/v7/using-npm/scripts
 
 [package-json-main]: https://docs.npmjs.com/cli/v7/configuring-npm/package-json#main
 
-[app]: ../api/app.md
-[browser-window]: ../api/browser-window.md
+<!-- [app]: ../api/app.md
+[browser-window]: ../api/browser-window.md -->
 [commonjs]: https://nodejs.org/docs/latest/api/modules.html#modules_modules_commonjs_modules
-[app-ready]: ../api/app.md#event-ready
-[app-when-ready]: ../api/app.md#appwhenready
+<!-- [app-ready]: ../api/app.md#event-ready
+[app-when-ready]: ../api/app.md#appwhenready -->
 
 [node-platform]: https://nodejs.org/api/process.html#process_process_platform
-[window-all-closed]: ../api/app.md#event-window-all-closed
+<!-- [window-all-closed]: ../api/app.md#event-window-all-closed
 [app-quit]: ../api/app.md#appquit
 
 [activate]: ../api/app.md#event-activate-macos
 
-[Process Model]: ./process-model.md
+[Process Model]: ./process-model.md -->
 [dirname]: https://nodejs.org/api/modules.html#modules_dirname
 [path-join]: https://nodejs.org/api/path.html#path_path_join_paths
 

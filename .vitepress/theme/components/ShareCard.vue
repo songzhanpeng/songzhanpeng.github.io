@@ -14,7 +14,7 @@ const description = ref("");
 
 async function getRandomJoke() {
   try {
-    const response = await fetch("/joke.json");
+    const response = await fetch("/jokes.json");
     const { data: jokes } = await response.json();
     const randomIndex = Math.floor(Math.random() * jokes.length);
     return jokes[randomIndex];
