@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yinyuejun.top/</id>
     <title>你的饮月君</title>
-    <updated>2023-07-21T06:53:42.507Z</updated>
+    <updated>2023-07-21T08:13:52.842Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>你的饮月君</name>
@@ -19,7 +19,7 @@
         <title type="html"><![CDATA[定时提醒小助手]]></title>
         <id>https://yinyuejun.top/posts/定时提醒喝水小助手.html</id>
         <link href="https://yinyuejun.top/posts/定时提醒喝水小助手.html"/>
-        <updated>2023-07-20T00:00:00.000Z</updated>
+        <updated>2023-07-21T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[定时提醒小助手]]></summary>
         <content type="html"><![CDATA[<h1>定时提醒小助手</h1>
 <pre><code class="language-javascript">// ==UserScript==

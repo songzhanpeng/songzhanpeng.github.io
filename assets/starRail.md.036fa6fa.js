@@ -1,0 +1,1 @@
+import{_ as a,c as e,I as r,o,J as s}from"./chunks/framework.ad474ad6.js";const u=JSON.parse('{"title":"","description":"","frontmatter":{"layout":"page"},"headers":[],"relativePath":"starRail.md"}'),n={name:"starRail.md"};function c(l,i,p,_,d,m){const t=s("StarRail",!0);return o(),e("div",null,[r(t)])}const R=a(n,[["render",c]]);export{u as __pageData,R as default};
