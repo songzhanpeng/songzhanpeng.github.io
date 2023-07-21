@@ -268,7 +268,7 @@ The code contained in `renderer.js` can then use the same JavaScript APIs and to
 
 完成上述步骤后，您应该有一个功能齐全的Electron程序，如下所示：
 
-![最简的 Electron 应用程序](../images/simplest-electron-app.png)
+![最简的 Electron 应用程序](/public/simplest-electron-app.png)
 
 <!--TODO(erickzhao): Remove the individual code blocks for static website -->
 完整代码如下：
