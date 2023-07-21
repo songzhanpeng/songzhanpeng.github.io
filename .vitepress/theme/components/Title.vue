@@ -21,6 +21,7 @@ const publishDate = ref("");
 dayjs.extend(relativeTime);
 onContentUpdated(() => {
   const { frontmatter } = pageData.value;
+  console.log("🚀 ~ file: Title.vue:24 ~ onContentUpdated ~ frontmatter:", frontmatter)
   publishDate.value = dayjs().to(dayjs(frontmatter.date || Date.now()));
 });
 </script>

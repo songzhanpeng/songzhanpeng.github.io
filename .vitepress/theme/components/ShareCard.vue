@@ -4,7 +4,7 @@
       <span>Hi, I'm 你的饮月君 👋</span>
     </h1>
     <p class="description">
-      A frontend developer(he/him) who is building in web3.
+      A frontend developer(he/him) who is building in study.
     </p>
   </div>
 </template>

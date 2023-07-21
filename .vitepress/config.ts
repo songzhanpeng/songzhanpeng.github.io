@@ -54,16 +54,20 @@ async function config() {
       postLength: await getPostLength(),
       nav: [
         {
-          text: "🏡Blogs",
+          text: "🏡博客",
           link: "/",
         },
         {
-          text: "🔖Tags",
+          text: "🔖标签",
           link: "/tags",
         },
         {
-          text: "📃Archives",
+          text: "📃历史博客",
           link: "/archives",
+        },
+        {
+          text: "崩坏*星穹铁道",
+          link: "/starRail",
         },
       ],
       socialLinks: [
