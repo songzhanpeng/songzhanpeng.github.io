@@ -1,23 +1,221 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Clark Cui</title>
-        <link>https://clark-cui.top/</link>
-        <description>Clark Cui' Blog</description>
-        <lastBuildDate>Fri, 21 Jul 2023 03:39:52 GMT</lastBuildDate>
+        <title>你的饮月君</title>
+        <link>https://yinyuejun.top/</link>
+        <description>你的饮月君' Blog</description>
+        <lastBuildDate>Fri, 21 Jul 2023 06:53:42 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
-            <title>Clark Cui</title>
-            <url>https://clark-cui.top/horse.svg</url>
-            <link>https://clark-cui.top/</link>
+            <title>你的饮月君</title>
+            <url>https://yinyuejun.top/horse.svg</url>
+            <link>https://yinyuejun.top/</link>
         </image>
         <copyright>MIT License</copyright>
-        <atom:link href="https://clark-cui.top/feed.xml" rel="self" type="application/rss+xml"/>
+        <atom:link href="https://yinyuejun.top/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[定时提醒小助手]]></title>
+            <link>https://yinyuejun.top/posts/定时提醒喝水小助手.html</link>
+            <guid>https://yinyuejun.top/posts/定时提醒喝水小助手.html</guid>
+            <pubDate>Thu, 20 Jul 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[定时提醒小助手]]></description>
+            <content:encoded><![CDATA[<h1>定时提醒小助手</h1>
+<pre><code class="language-javascript">// ==UserScript==
+// @name         提醒喝水小助手
+// @namespace    https://bbs.tampermonkey.net.cn/
+// @version      0.1.0
+// @description  工作日每半个小时提醒你喝水,定时时间可以自行修改
+// @author       yinyuejun
+// @crontab      */30 10-20/1 * * 1-5
+// @grant        GM_notification
+// @console log
+// ==/UserScript==
+
+const Roles = {
+    &quot;1001&quot;: {
+        &quot;id&quot;: &quot;1001&quot;,
+        &quot;name&quot;: &quot;三月七&quot;
+    },
+    &quot;1002&quot;: {
+        &quot;id&quot;: &quot;1002&quot;,
+        &quot;name&quot;: &quot;丹恒&quot;
+    },
+    &quot;1003&quot;: {
+        &quot;id&quot;: &quot;1003&quot;,
+        &quot;name&quot;: &quot;姬子&quot;
+    },
+    &quot;1004&quot;: {
+        &quot;id&quot;: &quot;1004&quot;,
+        &quot;name&quot;: &quot;瓦尔特&quot;
+    },
+    &quot;1005&quot;: {
+        &quot;id&quot;: &quot;1005&quot;,
+        &quot;name&quot;: &quot;卡芙卡&quot;
+    },
+    &quot;1006&quot;: {
+        &quot;id&quot;: &quot;1006&quot;,
+        &quot;name&quot;: &quot;银狼&quot;
+    },
+    &quot;1008&quot;: {
+        &quot;id&quot;: &quot;1008&quot;,
+        &quot;name&quot;: &quot;阿兰&quot;
+    },
+    &quot;1009&quot;: {
+        &quot;id&quot;: &quot;1009&quot;,
+        &quot;name&quot;: &quot;艾丝妲&quot;
+    },
+    &quot;1013&quot;: {
+        &quot;id&quot;: &quot;1013&quot;,
+        &quot;name&quot;: &quot;黑塔&quot;
+    },
+    &quot;1101&quot;: {
+        &quot;id&quot;: &quot;1101&quot;,
+        &quot;name&quot;: &quot;布洛妮娅&quot;
+    },
+    &quot;1102&quot;: {
+        &quot;id&quot;: &quot;1102&quot;,
+        &quot;name&quot;: &quot;希儿&quot;
+    },
+    &quot;1103&quot;: {
+        &quot;id&quot;: &quot;1103&quot;,
+        &quot;name&quot;: &quot;希露瓦&quot;
+    },
+    &quot;1104&quot;: {
+        &quot;id&quot;: &quot;1104&quot;,
+        &quot;name&quot;: &quot;杰帕德&quot;
+    },
+    &quot;1105&quot;: {
+        &quot;id&quot;: &quot;1105&quot;,
+        &quot;name&quot;: &quot;娜塔莎&quot;
+    },
+    &quot;1106&quot;: {
+        &quot;id&quot;: &quot;1106&quot;,
+        &quot;name&quot;: &quot;佩拉&quot;
+    },
+    &quot;1107&quot;: {
+        &quot;id&quot;: &quot;1107&quot;,
+        &quot;name&quot;: &quot;克拉拉&quot;
+    },
+    &quot;1108&quot;: {
+        &quot;id&quot;: &quot;1108&quot;,
+        &quot;name&quot;: &quot;桑博&quot;
+    },
+    &quot;1109&quot;: {
+        &quot;id&quot;: &quot;1109&quot;,
+        &quot;name&quot;: &quot;虎克&quot;
+    },
+    &quot;1201&quot;: {
+        &quot;id&quot;: &quot;1201&quot;,
+        &quot;name&quot;: &quot;青雀&quot;
+    },
+    &quot;1202&quot;: {
+        &quot;id&quot;: &quot;1202&quot;,
+        &quot;name&quot;: &quot;停云&quot;
+    },
+    &quot;1203&quot;: {
+        &quot;id&quot;: &quot;1203&quot;,
+        &quot;name&quot;: &quot;罗刹&quot;
+    },
+    &quot;1204&quot;: {
+        &quot;id&quot;: &quot;1204&quot;,
+        &quot;name&quot;: &quot;景元&quot;
+    },
+    &quot;1206&quot;: {
+        &quot;id&quot;: &quot;1206&quot;,
+        &quot;name&quot;: &quot;素裳&quot;
+    },
+    &quot;1209&quot;: {
+        &quot;id&quot;: &quot;1209&quot;,
+        &quot;name&quot;: &quot;彦卿&quot;
+    },
+    &quot;1211&quot;: {
+        &quot;id&quot;: &quot;1211&quot;,
+        &quot;name&quot;: &quot;白露&quot;
+    },
+    // &quot;8001&quot;: {
+    //     &quot;id&quot;: &quot;8001&quot;,
+    //     &quot;name&quot;: &quot;开拓者 (物理)&quot;
+    // },
+    // &quot;8002&quot;: {
+    //     &quot;id&quot;: &quot;8002&quot;,
+    //     &quot;name&quot;: &quot;开拓者 (物理)&quot;
+    // },
+    // &quot;8003&quot;: {
+    //     &quot;id&quot;: &quot;8003&quot;,
+    //     &quot;name&quot;: &quot;开拓者 (火)&quot;
+    // },
+    // &quot;8004&quot;: {
+    //     &quot;id&quot;: &quot;8004&quot;,
+    //     &quot;name&quot;: &quot;开拓者 (火)&quot;
+    // }
+}
+
+function getAvatarAndImage(id) {
+    const baseUrl = &quot;https://gitee.com/hewang1an/StarRail-plugin/raw/main/resources/panel/resources&quot;;
+    return {
+        avatarUrl: baseUrl + `/avatar/${id}.png`,
+        charImageUrl: baseUrl + `/char_image/${id}.png`,
+    }
+}
+
+function getRandomRole(id) {
+    if (id) {
+        const role = Roles[id]
+        if (role) {
+            const { avatarUrl, charImageUrl } = getAvatarAndImage(role.id)
+            return {
+                id: role.id,
+                name: role.name,
+                avatar: avatarUrl,
+                charImage: charImageUrl
+            };
+        } else {
+            console.warn('Role not found', id)
+        }
+    } else {
+        // 随机角色
+        const roleList = Object.entries(Roles);
+        const randomIndex = Math.floor(Math.random() * roleList.length);
+        const roleInfo = roleList[randomIndex];
+        const { avatarUrl, charImageUrl } = getAvatarAndImage(roleInfo[0])
+        return {
+            id: roleInfo[1].id,
+            name: roleInfo[1].name,
+            avatar: avatarUrl,
+            charImage: charImageUrl
+        };
+    }
+
+}
+
+return new Promise((resolve, reject) =&gt; {
+
+    const currentDate = new Date();
+    const currentHour = currentDate.getHours();
+
+    if (currentHour &gt;= 9 &amp;&amp; currentHour &lt;= 20) {
+        const { name, avatar } = getRandomRole(1005)
+
+        GM_notification({
+            title: `${name}的温馨提醒`,
+            text: &quot;亲爱的，是时候喝杯水休息一下了&quot;,
+            image: avatar,
+            ondone: () =&gt; {
+                resolve();
+            }
+        });
+    }
+});
+
+</code></pre>
+]]></content:encoded>
+            <author>1686588552@qq.com (你的饮月君)</author>
+        </item>
         <item>
             <title><![CDATA[Scratch Gui]]></title>
-            <link>https://clark-cui.top/posts/scratch-gui.html</link>
-            <guid>https://clark-cui.top/posts/scratch-gui.html</guid>
+            <link>https://yinyuejun.top/posts/scratch-gui.html</link>
+            <guid>https://yinyuejun.top/posts/scratch-gui.html</guid>
             <pubDate>Wed, 21 Jun 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[Scratch Gui]]></description>
             <content:encoded><![CDATA[<h3>优化的原因</h3>
@@ -188,12 +386,12 @@ export default App;
 <h3>引用链接</h3>
 <p><a href="https://www.joshwcomeau.com/react/usememo-and-usecallback/#use-case-2-preserved-references">引用链接</a></p>
 ]]></content:encoded>
-            <author>rongchuancui@gmail.com (Clark Cui)</author>
+            <author>1686588552@qq.com (你的饮月君)</author>
         </item>
         <item>
             <title><![CDATA[2022 Annual Summary]]></title>
-            <link>https://clark-cui.top/posts/2022 Annual Summary.html</link>
-            <guid>https://clark-cui.top/posts/2022 Annual Summary.html</guid>
+            <link>https://yinyuejun.top/posts/2022 Annual Summary.html</link>
+            <guid>https://yinyuejun.top/posts/2022 Annual Summary.html</guid>
             <pubDate>Wed, 19 Apr 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[2022 Annual Summary]]></description>
             <content:encoded><![CDATA[<h3>Why write the annual summary at this time?</h3>
@@ -217,12 +415,12 @@ export default App;
 <p>My main financial tools this year are bank deposits, money funds, and Bitcoin spots. My investment approach is conservative, but I still get more than 20% returns. Most of them come from Bitcoin. Of course, I've liquidated my position now, maybe I'll buy when Bitcoin goes down again.</p>
 <p>Next year I plan to buy some stocks and ETH spots. Although they will not account for much, because high returns will also assume high risk, my goal is 8% APY, that's enough for me.</p>
 ]]></content:encoded>
-            <author>rongchuancui@gmail.com (Clark Cui)</author>
+            <author>1686588552@qq.com (你的饮月君)</author>
         </item>
         <item>
             <title><![CDATA[前端已死]]></title>
-            <link>https://clark-cui.top/posts/前端已死.html</link>
-            <guid>https://clark-cui.top/posts/前端已死.html</guid>
+            <link>https://yinyuejun.top/posts/前端已死.html</link>
+            <guid>https://yinyuejun.top/posts/前端已死.html</guid>
             <pubDate>Wed, 05 Apr 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[前端已死]]></description>
             <content:encoded><![CDATA[<p>最近前端已死的言论发酵很严重，我思考了不久，这里分享一下我的看法，比较悲观，只是个人观点，欢迎反驳。</p>
@@ -274,12 +472,12 @@ export default App;
 <p>多探索创业的可能性，既然打工早晚要失业，那么不如自己去当老板。</p>
 <p>想留在国内的话，还是要提前进入铁饭碗行业，旱涝保收。毕竟，铁饭碗才是这片土地的主流。</p>
 ]]></content:encoded>
-            <author>rongchuancui@gmail.com (Clark Cui)</author>
+            <author>1686588552@qq.com (你的饮月君)</author>
         </item>
         <item>
             <title><![CDATA[使用whisper生成字幕]]></title>
-            <link>https://clark-cui.top/posts/使用whisper生成字幕.html</link>
-            <guid>https://clark-cui.top/posts/使用whisper生成字幕.html</guid>
+            <link>https://yinyuejun.top/posts/使用whisper生成字幕.html</link>
+            <guid>https://yinyuejun.top/posts/使用whisper生成字幕.html</guid>
             <pubDate>Wed, 22 Mar 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[使用whisper生成字幕]]></description>
             <content:encoded><![CDATA[<h2>简介</h2>
@@ -345,12 +543,12 @@ brew install ffmpeg
 <p>不过，上面这种方式翻译质量堪忧，目前翻译质量比较好的还是 deepl 和 gpt，deepl 和 gpt 都需要付费，我觉得有英文字幕就行了吧，不懂的单词现查，就当作学英语了</p>
 <p>或许有人会有疑问，为啥不用 whisper 的 translate 功能？主要有 2 个原因，第一是慢，第二是 medium 模型的中文翻译水平比较一般，如果需要中文翻译的话，还是使用别的翻译软件比较靠谱，比如上文提到的 deepl 和 gpt。当然，如果你的 pc 性能足够的话，也可以直接运行最新的 large-2 模型，中文翻译质量应该高不少</p>
 ]]></content:encoded>
-            <author>rongchuancui@gmail.com (Clark Cui)</author>
+            <author>1686588552@qq.com (你的饮月君)</author>
         </item>
         <item>
             <title><![CDATA[合约的multicall]]></title>
-            <link>https://clark-cui.top/posts/合约的multicall.html</link>
-            <guid>https://clark-cui.top/posts/合约的multicall.html</guid>
+            <link>https://yinyuejun.top/posts/合约的multicall.html</link>
+            <guid>https://yinyuejun.top/posts/合约的multicall.html</guid>
             <pubDate>Mon, 20 Mar 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[合约的multicall]]></description>
             <content:encoded><![CDATA[<h2>背景</h2>
@@ -622,12 +820,12 @@ const { address, abi, functionName, ...rest } = contracts[i];
 <li><a href="https://github.com/mds1/multicall">https://github.com/mds1/multicall</a></li>
 </ol>
 ]]></content:encoded>
-            <author>rongchuancui@gmail.com (Clark Cui)</author>
+            <author>1686588552@qq.com (你的饮月君)</author>
         </item>
         <item>
             <title><![CDATA[为什么DEX需要授权?]]></title>
-            <link>https://clark-cui.top/posts/为什么DEX需要授权.html</link>
-            <guid>https://clark-cui.top/posts/为什么DEX需要授权.html</guid>
+            <link>https://yinyuejun.top/posts/为什么DEX需要授权.html</link>
+            <guid>https://yinyuejun.top/posts/为什么DEX需要授权.html</guid>
             <pubDate>Thu, 16 Feb 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[为什么DEX需要授权?]]></description>
             <content:encoded><![CDATA[<h3>前言</h3>
@@ -767,12 +965,12 @@ event Approval(address indexed _owner, address indexed _spender, uint256 _value)
 <p><a href="https://ethereum.stackexchange.com/questions/28233/how-to-do-approve-and-transferfrom-for-ether">how-to-do-approve-and-transferfrom-for-ether</a></p>
 <p><a href="https://docs.openzeppelin.com/contracts/4.x/erc20">实现自己的ERC-20</a></p>
 ]]></content:encoded>
-            <author>rongchuancui@gmail.com (Clark Cui)</author>
+            <author>1686588552@qq.com (你的饮月君)</author>
         </item>
         <item>
             <title><![CDATA[区块链科普2]]></title>
-            <link>https://clark-cui.top/posts/区块链科普2.html</link>
-            <guid>https://clark-cui.top/posts/区块链科普2.html</guid>
+            <link>https://yinyuejun.top/posts/区块链科普2.html</link>
+            <guid>https://yinyuejun.top/posts/区块链科普2.html</guid>
             <pubDate>Mon, 13 Feb 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[区块链基础知识]]></description>
             <content:encoded><![CDATA[<h3>流行词</h3>
@@ -854,12 +1052,12 @@ event Approval(address indexed _owner, address indexed _spender, uint256 _value)
 <p>指的是在创建新区块时增删交易或对交易进行重新排序的策略。 MEV旨在赚取尽可能多的额外利润。 由于区块生产者有能力选择和排序交易，因此最适合采取这一策略</p>
 <p><a href="https://ethereum.org/zh/developers/docs/mev/">https://ethereum.org/zh/developers/docs/mev/</a></p>
 ]]></content:encoded>
-            <author>rongchuancui@gmail.com (Clark Cui)</author>
+            <author>1686588552@qq.com (你的饮月君)</author>
         </item>
         <item>
             <title><![CDATA[React 简单优化]]></title>
-            <link>https://clark-cui.top/posts/react优化.html</link>
-            <guid>https://clark-cui.top/posts/react优化.html</guid>
+            <link>https://yinyuejun.top/posts/react优化.html</link>
+            <guid>https://yinyuejun.top/posts/react优化.html</guid>
             <pubDate>Sat, 03 Sep 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[React]]></description>
             <content:encoded><![CDATA[<h3>优化的原因</h3>
@@ -1030,12 +1228,12 @@ export default App;
 <h3>引用链接</h3>
 <p><a href="https://www.joshwcomeau.com/react/usememo-and-usecallback/#use-case-2-preserved-references">引用链接</a></p>
 ]]></content:encoded>
-            <author>rongchuancui@gmail.com (Clark Cui)</author>
+            <author>1686588552@qq.com (你的饮月君)</author>
         </item>
         <item>
             <title><![CDATA[密码学原理]]></title>
-            <link>https://clark-cui.top/posts/密码学原理.html</link>
-            <guid>https://clark-cui.top/posts/密码学原理.html</guid>
+            <link>https://yinyuejun.top/posts/密码学原理.html</link>
+            <guid>https://yinyuejun.top/posts/密码学原理.html</guid>
             <pubDate>Mon, 15 Aug 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[区块链基础知识]]></description>
             <content:encoded><![CDATA[<h3>简介</h3>
@@ -1101,12 +1299,12 @@ export default App;
 <p>比特币和以太坊中使用的数字签名算法是椭圆曲线数字签名算法（Elliptic Curve Digital Signature Algorithm,也就是 ECDSA</p>
 <p>Tendermint Core 中实现了多种数字签名算法，包括 ECDSA、Ed25519 以及 Sr25519，Tendermint Core 采用 Ed25519 数字签名算法完成共识投票过程中的投票，而 Cosmos-SDK 采用 ECDSA 进行交易的授权</p>
 ]]></content:encoded>
-            <author>rongchuancui@gmail.com (Clark Cui)</author>
+            <author>1686588552@qq.com (你的饮月君)</author>
         </item>
         <item>
             <title><![CDATA[Cosmos 详解]]></title>
-            <link>https://clark-cui.top/posts/Cosmos详解.html</link>
-            <guid>https://clark-cui.top/posts/Cosmos详解.html</guid>
+            <link>https://yinyuejun.top/posts/Cosmos详解.html</link>
+            <guid>https://yinyuejun.top/posts/Cosmos详解.html</guid>
             <pubDate>Tue, 05 Jul 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[cosmos]]></description>
             <content:encoded><![CDATA[<h2>区块链现阶段的问题</h2>
@@ -1171,12 +1369,12 @@ export default App;
 <p>IBC 协议是为了跨链而诞生的，是基于中继机制而实现的协议，原理是任意两个希望跨链通信的区块链可以依赖密码学证明技术向对方链证明自身链上发生了特定的事件。两条链之间的网络通信通过中继者（relayer）完成。</p>
 <p><img src="../public/WeChatd288ba57261eae3fef086b7f0abcff78.png" alt=""></p>
 ]]></content:encoded>
-            <author>rongchuancui@gmail.com (Clark Cui)</author>
+            <author>1686588552@qq.com (你的饮月君)</author>
         </item>
         <item>
             <title><![CDATA[智能合约开发2]]></title>
-            <link>https://clark-cui.top/posts/智能合约开发2.html</link>
-            <guid>https://clark-cui.top/posts/智能合约开发2.html</guid>
+            <link>https://yinyuejun.top/posts/智能合约开发2.html</link>
+            <guid>https://yinyuejun.top/posts/智能合约开发2.html</guid>
             <pubDate>Mon, 09 May 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[智能合约]]></description>
             <content:encoded><![CDATA[<h3>合约的组成</h3>
@@ -1244,12 +1442,12 @@ contract Counter {  //定义合约
 <p>合约可以显示地转换为 address 类型，从而可以使用地址类型的成员函数</p>
 <p>这段时间太忙了，先学到这吧...挖坑，后面再填</p>
 ]]></content:encoded>
-            <author>rongchuancui@gmail.com (Clark Cui)</author>
+            <author>1686588552@qq.com (你的饮月君)</author>
         </item>
         <item>
             <title><![CDATA[智能合约开发]]></title>
-            <link>https://clark-cui.top/posts/智能合约开发.html</link>
-            <guid>https://clark-cui.top/posts/智能合约开发.html</guid>
+            <link>https://yinyuejun.top/posts/智能合约开发.html</link>
+            <guid>https://yinyuejun.top/posts/智能合约开发.html</guid>
             <pubDate>Fri, 06 May 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[智能合约]]></description>
             <content:encoded><![CDATA[<h2>代码地址</h2>
@@ -1326,7 +1524,7 @@ contract Counter{
 <p>ganache是开发区块链，提供本地模拟的链上环境</p>
 <p><a href="https://trufflesuite.com/docs/truffle/">官方文档</a></p>
 <p><a href="https://learnblockchain.cn/docs/truffle/">中文文档</a></p>
-<p><a href="https://github.com/clark-cui/truffle-demo">我的代码</a></p>
+<p><a href="https://github.com/yinyuejun/truffle-demo">我的代码</a></p>
 <pre><code class="language-shell">Truffle 安装  npm install -g truffle
 创建工程 truffle init或者truffle unbox metacoin(我用的第二个，相当于使用metacoin这个模版，注意需要手动mkdir一个folder，再在里面执行创建，注意配置proxy)
 </code></pre>
@@ -1556,7 +1754,7 @@ Summary
 <p>Hardhat node:开发区块链，提供本地模拟的链上环境</p>
 <p><a href="https://hardhat.org/getting-started/">官方文档</a>,<a href="https://learnblockchain.cn/docs/hardhat/getting-started/">中文文档</a></p>
 <p><a href="https://github.com/NomicFoundation/hardhat-hackathon-boilerplate">参考代码</a></p>
-<p><a href="https://github.com/clark-cui/hardhat-demo">我的代码</a></p>
+<p><a href="https://github.com/yinyuejun/hardhat-demo">我的代码</a></p>
 <h4>创建工程</h4>
 <pre><code class="language-shell">mkdir hardhat-demo //创建一个folder
 cd hardhat-demo
@@ -1932,12 +2130,12 @@ const contractAddress = require(&quot;../data/contract-address.json&quot;);
 </li>
 </ol>
 ]]></content:encoded>
-            <author>rongchuancui@gmail.com (Clark Cui)</author>
+            <author>1686588552@qq.com (你的饮月君)</author>
         </item>
         <item>
             <title><![CDATA[DeFi科普]]></title>
-            <link>https://clark-cui.top/posts/DeFi科普.html</link>
-            <guid>https://clark-cui.top/posts/DeFi科普.html</guid>
+            <link>https://yinyuejun.top/posts/DeFi科普.html</link>
+            <guid>https://yinyuejun.top/posts/DeFi科普.html</guid>
             <pubDate>Sun, 01 May 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[DeFi基础知识]]></description>
             <content:encoded><![CDATA[<h2>什么是 DeFi</h2>
@@ -1987,12 +2185,12 @@ AMM 模式的交易所，汇率计算是其中的要点，它的原理是一个�
 假设还是之前那个 10 *10 的模型，苹果的市场价格涨到了 5 元，香蕉仍然是 1 元。所以就有人在这个过程中不断用香蕉换苹果套利，然后池子里就剩下 5 个苹果，20 个香蕉，k 还是 100。此时池子里的价值是 5 *5+20 *1=45 元。假设池子的流动性都是你添加的，相当于你参加了流动性挖矿，那么你的资产价值就是 45 元。但如果你不参与流动性挖矿，你原来的 10 个苹果，10 个香蕉都还在，那么此时价值就是 10 *5+10 *1=60 元，参与流动性挖矿反倒赚的少了，这 15 美元的差价就是无常损失。uniswap 的无常损失情况可以通过曲线图快速知晓（losses to liquidity providers due to price variation）,展示了价格变化多少时，无偿损失会有多少。</p>
 <p>不同的去中心化交易所，会选择不同的函数来减少滑点和无偿损失。</p>
 ]]></content:encoded>
-            <author>rongchuancui@gmail.com (Clark Cui)</author>
+            <author>1686588552@qq.com (你的饮月君)</author>
         </item>
         <item>
             <title><![CDATA[区块链科普]]></title>
-            <link>https://clark-cui.top/posts/区块链科普.html</link>
-            <guid>https://clark-cui.top/posts/区块链科普.html</guid>
+            <link>https://yinyuejun.top/posts/区块链科普.html</link>
+            <guid>https://yinyuejun.top/posts/区块链科普.html</guid>
             <pubDate>Wed, 27 Apr 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[区块链基础知识]]></description>
             <content:encoded><![CDATA[<h2>什么是区块链</h2>
@@ -2086,12 +2284,12 @@ AMM 模式的交易所，汇率计算是其中的要点，它的原理是一个�
 <h2>NFT 初探</h2>
 <p>NFT 本质就是原来的东西+数字签名，用户可以通过 NFT 平台去验证来鉴别真假。</p>
 ]]></content:encoded>
-            <author>rongchuancui@gmail.com (Clark Cui)</author>
+            <author>1686588552@qq.com (你的饮月君)</author>
         </item>
         <item>
             <title><![CDATA[虚拟机配置]]></title>
-            <link>https://clark-cui.top/posts/虚拟机配置.html</link>
-            <guid>https://clark-cui.top/posts/虚拟机配置.html</guid>
+            <link>https://yinyuejun.top/posts/虚拟机配置.html</link>
+            <guid>https://yinyuejun.top/posts/虚拟机配置.html</guid>
             <pubDate>Thu, 20 Jan 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[配置虚拟机开发环境]]></description>
             <content:encoded><![CDATA[<h3>linux shell</h3>
@@ -2158,12 +2356,12 @@ AMM 模式的交易所，汇率计算是其中的要点，它的原理是一个�
 <li>不同的镜像竟然有不同的坑,linux 桌面端果然是个大坑...坚定了我继续用 windows+wsl2 的道路...或者直接用 mac 也行，啥都帮我弄好了，相信 less is more</li>
 </ul>
 ]]></content:encoded>
-            <author>rongchuancui@gmail.com (Clark Cui)</author>
+            <author>1686588552@qq.com (你的饮月君)</author>
         </item>
         <item>
             <title><![CDATA[博客开启https]]></title>
-            <link>https://clark-cui.top/posts/博客开启https.html</link>
-            <guid>https://clark-cui.top/posts/博客开启https.html</guid>
+            <link>https://yinyuejun.top/posts/博客开启https.html</link>
+            <guid>https://yinyuejun.top/posts/博客开启https.html</guid>
             <pubDate>Tue, 11 Jan 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[所有子域名都开启了https]]></description>
             <content:encoded><![CDATA[<h2>背景</h2>
@@ -2177,7 +2375,7 @@ AMM 模式的交易所，汇率计算是其中的要点，它的原理是一个�
 <p>在我肝了几天把新的博客站（主站）更新了出来后发生了今早的问题。</p>
 <h2>开干</h2>
 <h3>目标</h3>
-<p>主域名(clark-cui.top) 与子域名(blog.clark-cui.top, note.clark-cui.top,box.clark-cui.top)均开启 https</p>
+<p>主域名(yinyuejun.top) 与子域名(blog.yinyuejun.top, note.yinyuejun.top,box.yinyuejun.top)均开启 https</p>
 <h3>方案</h3>
 <p>毫无疑问，肯定是 let's encrypt。国内一些云服务厂商有代处理的业务，但是基本都收费，价格不菲...然而看起来他们也是用的 let's encrypt。一番查阅后，决定使用自动化工具 cerbot，到期自动续，看起来很不错，试一试把</p>
 <h3>问题</h3>
@@ -2218,16 +2416,16 @@ sudo systemctl status nginx //检查其运行状态
 <p>热泪盈眶啊，有没有...</p>
 <h2>总结</h2>
 <p>这次踩坑花了一下午时间，报错的时候去看日志，能看到错误的信息，但由于我不知道是啥，所以信息也没啥用，还得靠 Google,所以我还是得恶补一下操作系统的知识。</p>
-<p><s>然后刚又发现了新问题，站点是 https 的，但我博客文章里的图片，之前上传到七牛云图床的时候，绑定的域名是 cdn.clark-cui.top，是 http 的...在 https 的站点里就不加载了....要搞的话，得把 cdn 的域名也弄成 https...我醉了。想了下，我之前搞的这个图床 cdn 使用率基本小于 1%，目前没需求那就是没用，我还是把原图扣出来吧。</s></p>
+<p><s>然后刚又发现了新问题，站点是 https 的，但我博客文章里的图片，之前上传到七牛云图床的时候，绑定的域名是 cdn.yinyuejun.top，是 http 的...在 https 的站点里就不加载了....要搞的话，得把 cdn 的域名也弄成 https...我醉了。想了下，我之前搞的这个图床 cdn 使用率基本小于 1%，目前没需求那就是没用，我还是把原图扣出来吧。</s></p>
 <p>Done,</p>
 <p>Cheers!</p>
 ]]></content:encoded>
-            <author>rongchuancui@gmail.com (Clark Cui)</author>
+            <author>1686588552@qq.com (你的饮月君)</author>
         </item>
         <item>
             <title><![CDATA[随便说点啥]]></title>
-            <link>https://clark-cui.top/posts/随便说点啥.html</link>
-            <guid>https://clark-cui.top/posts/随便说点啥.html</guid>
+            <link>https://yinyuejun.top/posts/随便说点啥.html</link>
+            <guid>https://yinyuejun.top/posts/随便说点啥.html</guid>
             <pubDate>Mon, 10 Jan 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[吹吹水]]></description>
             <content:encoded><![CDATA[<h2>生活</h2>
@@ -2262,12 +2460,12 @@ sudo systemctl status nginx //检查其运行状态
 <h3>乒乓球</h3>
 <p>目前就偶尔和女朋友周末打打乒乓球</p>
 ]]></content:encoded>
-            <author>rongchuancui@gmail.com (Clark Cui)</author>
+            <author>1686588552@qq.com (你的饮月君)</author>
         </item>
         <item>
             <title><![CDATA[mac外接显示器]]></title>
-            <link>https://clark-cui.top/posts/mac外接显示器.html</link>
-            <guid>https://clark-cui.top/posts/mac外接显示器.html</guid>
+            <link>https://yinyuejun.top/posts/mac外接显示器.html</link>
+            <guid>https://yinyuejun.top/posts/mac外接显示器.html</guid>
             <pubDate>Fri, 15 Oct 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[mac外接显示器的坑]]></description>
             <content:encoded><![CDATA[<h2>背景</h2>
@@ -2283,12 +2481,12 @@ sudo systemctl status nginx //检查其运行状态
 <p>大概调研了下，大致就是改下 mac 的配置文件，但是得进恢复模式改，类似 PC 的 bios 设置吧，有写好的脚本，直接用就行，比较坑的一点是如果系统更新，就得再来一遍。</p>
 <p><a href="https://zhuanlan.zhihu.com/p/227788155?utm_source=wechat_session&amp;utm_medium=social&amp;utm_oi=1114657556978700288&amp;utm_campaign=shareopn">放一篇写的不错的教程</a></p>
 ]]></content:encoded>
-            <author>rongchuancui@gmail.com (Clark Cui)</author>
+            <author>1686588552@qq.com (你的饮月君)</author>
         </item>
         <item>
             <title><![CDATA[TypeScript学习笔记]]></title>
-            <link>https://clark-cui.top/posts/TypeScript学习笔记.html</link>
-            <guid>https://clark-cui.top/posts/TypeScript学习笔记.html</guid>
+            <link>https://yinyuejun.top/posts/TypeScript学习笔记.html</link>
+            <guid>https://yinyuejun.top/posts/TypeScript学习笔记.html</guid>
             <pubDate>Fri, 03 Sep 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[typescript学习笔记]]></description>
             <content:encoded><![CDATA[<h2>tips</h2>
@@ -2649,12 +2847,12 @@ tom.run();
 </code></pre>
 <h3>声明文件</h3>
 ]]></content:encoded>
-            <author>rongchuancui@gmail.com (Clark Cui)</author>
+            <author>1686588552@qq.com (你的饮月君)</author>
         </item>
         <item>
             <title><![CDATA[TTS]]></title>
-            <link>https://clark-cui.top/posts/TTS.html</link>
-            <guid>https://clark-cui.top/posts/TTS.html</guid>
+            <link>https://yinyuejun.top/posts/TTS.html</link>
+            <guid>https://yinyuejun.top/posts/TTS.html</guid>
             <pubDate>Mon, 03 May 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[tts]]></description>
             <content:encoded><![CDATA[<h3>需求</h3>
@@ -2786,12 +2984,12 @@ tom.run();
 </li>
 </ul>
 ]]></content:encoded>
-            <author>rongchuancui@gmail.com (Clark Cui)</author>
+            <author>1686588552@qq.com (你的饮月君)</author>
         </item>
         <item>
             <title><![CDATA[js变量提升]]></title>
-            <link>https://clark-cui.top/posts/变量提升.html</link>
-            <guid>https://clark-cui.top/posts/变量提升.html</guid>
+            <link>https://yinyuejun.top/posts/变量提升.html</link>
+            <guid>https://yinyuejun.top/posts/变量提升.html</guid>
             <pubDate>Tue, 08 Dec 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[javascript的变量提升机制]]></description>
             <content:encoded><![CDATA[<blockquote>
@@ -2889,12 +3087,12 @@ bar = function () {
 };
 </code></pre>
 ]]></content:encoded>
-            <author>rongchuancui@gmail.com (Clark Cui)</author>
+            <author>1686588552@qq.com (你的饮月君)</author>
         </item>
         <item>
             <title><![CDATA[代理配置]]></title>
-            <link>https://clark-cui.top/posts/proxyConfig.html</link>
-            <guid>https://clark-cui.top/posts/proxyConfig.html</guid>
+            <link>https://yinyuejun.top/posts/proxyConfig.html</link>
+            <guid>https://yinyuejun.top/posts/proxyConfig.html</guid>
             <pubDate>Wed, 10 Jun 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[由于网络问题，需要做一些代理的设置，这里是我的一些记录]]></description>
             <content:encoded><![CDATA[<h3>chrome</h3>
@@ -2907,18 +3105,18 @@ bar = function () {
 <li><a href="https://maofun.com/739.html">clash 配合 switch 插件</a></li>
 </ul>
 ]]></content:encoded>
-            <author>rongchuancui@gmail.com (Clark Cui)</author>
+            <author>1686588552@qq.com (你的饮月君)</author>
         </item>
         <item>
             <title><![CDATA[建站日记]]></title>
-            <link>https://clark-cui.top/posts/buildSite.html</link>
-            <guid>https://clark-cui.top/posts/buildSite.html</guid>
+            <link>https://yinyuejun.top/posts/buildSite.html</link>
+            <guid>https://yinyuejun.top/posts/buildSite.html</guid>
             <pubDate>Fri, 10 Jan 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[这是服务器建站的一系列记录，早期的版本已经遗失，这里是目前的一些实践与想法]]></description>
             <content:encoded><![CDATA[<h3>ucloud 服务器</h3>
 <ul>
 <li>主站和博客在/usr/local/src</li>
-<li>blog-clark-cui 与 homesite 都开启了自动上传 action 用 ftp 连接服务器上传的，服务器里的.git-ftp.log 文件就是记录的</li>
+<li>blog-yinyuejun 与 homesite 都开启了自动上传 action 用 ftp 连接服务器上传的，服务器里的.git-ftp.log 文件就是记录的</li>
 </ul>
 <h3>关于图床的思考</h3>
 <ul>
@@ -2973,7 +3171,7 @@ bar = function () {
 </li>
 </ul>
 ]]></content:encoded>
-            <author>rongchuancui@gmail.com (Clark Cui)</author>
+            <author>1686588552@qq.com (你的饮月君)</author>
         </item>
     </channel>
 </rss>
