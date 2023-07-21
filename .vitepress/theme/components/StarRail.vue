@@ -30,7 +30,7 @@
 import { reactive, onMounted } from "vue";
 
 const storageKey = "todos";
-const todos = reactive(JSON.parse(localStorage.getItem(storageKey)) || []);
+const todos = reactive(JSON.parse(window.localStorage.getItem(storageKey)) || []);
 let newTodo = "";
 
 const addTodo = () => {
@@ -42,13 +42,12 @@ const addTodo = () => {
 };
 
 const removeTodo = (index) => {
-  console.log("🚀 ~ file: StarRail.vue:45 ~ removeTodo ~ index:", index)
   todos.splice(index, 1);
   saveTodos();
 };
 
 const saveTodos = () => {
-  localStorage.setItem(storageKey, JSON.stringify(todos));
+  window.localStorage.setItem(storageKey, JSON.stringify(todos));
 };
 
 // Save todos to localStorage whenever todos change
