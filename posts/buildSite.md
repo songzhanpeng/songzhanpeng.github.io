@@ -9,7 +9,7 @@ tags:
 ### ucloud 服务器
 
 - 主站和博客在/usr/local/src
-- blog-clark-cui 与 homesite 都开启了自动上传 action 用 ftp 连接服务器上传的，服务器里的.git-ftp.log 文件就是记录的
+- blog-yinyuejun 与 homesite 都开启了自动上传 action 用 ftp 连接服务器上传的，服务器里的.git-ftp.log 文件就是记录的
 
 ### 关于图床的思考
 

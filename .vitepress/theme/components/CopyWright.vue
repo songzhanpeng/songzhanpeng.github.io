@@ -1,10 +1,10 @@
 <template>
   <footer>
     Powered by
-    <a href="https://github.com/clark-cui/" target="_blank" title="作者"
-      >clark-cui</a
+    <a href="https://github.com/songzhanpeng/" target="_blank" title="作者"
+      >yinyuejun</a
     >
-    | Copyright © 2019-{{ date }} | MIT License
+    | Copyright © 2022-{{ date }} | MIT License
   </footer>
 </template>
 <script lang="ts" setup>
