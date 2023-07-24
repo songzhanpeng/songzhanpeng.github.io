@@ -65,10 +65,10 @@ async function config() {
           text: "📃历史博客",
           link: "/archives",
         },
-        {
-          text: "崩坏*星穹铁道",
-          link: "/starRail",
-        },
+        // {
+        //   text: "崩坏*星穹铁道",
+        //   link: "/starRail",
+        // },
       ],
       socialLinks: [
         { icon: "github", link: "https://github.com/songzhanpeng" },
