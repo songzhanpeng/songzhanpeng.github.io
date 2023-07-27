@@ -4,7 +4,7 @@
         <title>你的饮月君</title>
         <link>https://yinyuejun.top/</link>
         <description>你的饮月君' Blog</description>
-        <lastBuildDate>Mon, 24 Jul 2023 02:22:21 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 27 Jul 2023 03:44:16 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
@@ -15,11 +15,11 @@
         <copyright>MIT License</copyright>
         <atom:link href="https://yinyuejun.top/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
-            <title><![CDATA[快速入门]]></title>
+            <title><![CDATA[Electron 快速入门]]></title>
             <link>https://yinyuejun.top/posts/electron.html</link>
             <guid>https://yinyuejun.top/posts/electron.html</guid>
             <pubDate>Fri, 21 Jul 2023 00:00:00 GMT</pubDate>
-            <description><![CDATA[快速入门]]></description>
+            <description><![CDATA[Electron 快速入门]]></description>
             <content:encoded><![CDATA[<h1>快速入门</h1>
 <p>本指南将会通过使用Electron创建一个极简的 Hello World 应用一步步的带你了解，该应用与<a href="https://github.com/electron/electron-quick-start"><code>electron/electron-quick-start</code></a>类似。</p>
 <p>通过这个教程，你的app将会打开一个浏览器窗口，来展示包含当前正在运行的 Chromium, Node.js与 Electronweb等版本信息的web界面</p>
