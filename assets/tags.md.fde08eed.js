@@ -1,1 +1,0 @@
-import{_ as t,c as a,I as o,o as s,J as n}from"./chunks/framework.ad474ad6.js";const g=JSON.parse('{"title":"","description":"","frontmatter":{"layout":"page"},"headers":[],"relativePath":"tags.md"}'),r={name:"tags.md"};function c(p,_,d,l,m,i){const e=n("Tags",!0);return s(),a("div",null,[o(e)])}const u=t(r,[["render",c]]);export{g as __pageData,u as default};
