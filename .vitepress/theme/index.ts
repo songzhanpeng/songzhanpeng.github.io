@@ -4,7 +4,7 @@ import DefaultTheme from "vitepress/theme";
 // 导入自定义组件
 import Archives from "./components/Archives.vue";
 import Tags from "./components/Tags.vue";
-import StarRail from "./components/StarRail.vue";
+// import StarRail from "./components/StarRail.vue";
 import MyLayout from "./components/MyLayout.vue";
 
 // 导入自定义 CSS 样式
@@ -29,6 +29,6 @@ export default {
     // 注册自定义全局组件
     app.component("Archives", Archives);
     app.component("Tags", Tags);
-    app.component("StarRail", StarRail);
+    // app.component("StarRail", StarRail);
   },
 };

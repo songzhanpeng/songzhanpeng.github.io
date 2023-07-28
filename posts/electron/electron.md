@@ -1,6 +1,6 @@
 ---
-title: 快速入门
-description: 快速入门
+title: Electron 快速入门
+description: Electron 快速入门
 date: 2023-07-21
 tags:
   - electron
