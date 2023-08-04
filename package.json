@@ -16,10 +16,14 @@
     "vitepress": "1.0.0-alpha.73"
   },
   "scripts": {
+    "// ---------- 本地开发服务器 ----------": "",
     "dev": "vitepress dev",
+    "// ---------- 生产环境构建 ----------": "",
     "build": "vitepress build",
+    "// ---------- 本地预览构建结果 ----------": "",
     "serve": "vitepress serve",
-    "deply": "npm run build && gh-pages -d .vitepress/dist"
+    "// ---------- 部署到 GitHub Pages ----------": "",
+    "deploy": "npm run build && gh-pages -d .vitepress/dist"
   },
   "dependencies": {
     "dayjs": "^1.11.7",

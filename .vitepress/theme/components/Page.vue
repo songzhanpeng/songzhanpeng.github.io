@@ -37,6 +37,7 @@ const { theme } = useData();
 
 // get posts
 let postsAll = theme.value.posts || [];
+// console.log("🚀 ~ file: Page.vue:40 ~ postsAll:", postsAll)
 // get postLength
 let postLength = theme.value.postLength;
 // get pageSize
