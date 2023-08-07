@@ -1,43 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1500px"
     height="1315px" viewBox="0 0 1500 1315" version="1.1">
-    <SCRIPT xmlns="" id="allow-copy_script">(function agent() {
-        let unlock = false
-        document.addEventListener('allow_copy', (event) =&gt; {
-        unlock = event.detail.unlock
-        })
-
-        const copyEvents = [
-        'copy',
-        'cut',
-        'contextmenu',
-        'selectstart',
-        'mousedown',
-        'mouseup',
-        'mousemove',
-        'keydown',
-        'keypress',
-        'keyup',
-        ]
-        const rejectOtherHandlers = (e) =&gt; {
-        if (unlock) {
-        e.stopPropagation()
-        if (e.stopImmediatePropagation) e.stopImmediatePropagation()
-        }
-        }
-        copyEvents.forEach((evt) =&gt; {
-        document.documentElement.addEventListener(evt, rejectOtherHandlers, {
-        capture: true,
-        })
-        })
-        })()</SCRIPT>
+    <defs>
+        <!-- 定义一个条纹图案 -->
+        <pattern id="stripes" patternUnits="userSpaceOnUse" width="20" height="40"
+            patternTransform="rotate(45)">
+            <rect x="0" y="0" width="10" height="40" fill="#FF7802" />
+            <rect x="10" y="0" width="10" height="40" fill="#FFFFFF" />
+        </pattern>
+    </defs>
     <title>logo</title>
     <g id="logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <circle id="ball2" fill="#FF7802" cx="161.5" cy="926.5" r="146.5">
+        <circle id="ball2" fill="url(#stripes)" cx="161.5" cy="926.5" r="146.5">
             <animateTransform attributeName="transform" type="translate"
                 values="1180 0;1180 0;590 240;0 0" keyTimes="0;0.5;0.75;1"
                 keySplines="0 0 1 1;0.5 0 1 1;0 0 0.5 1" calcMode="spline" begin="0s" dur="1s"
                 repeatCount="indefinite" fill="freeze" />
-
             <animate attributeType="XML" attributeName="opacity" values="0;1;1;1"
                 keyTimes="0;0.5;0.75;1" begin="0s" dur="1s" calcMode="discrete"
                 repeatCount="indefinite" fill="freeze" />
@@ -49,7 +26,7 @@
             id="body" fill="#000000" />
         <polygon id="hair" fill="#989898"
             points="567.140656 0.359343673 749.574206 182.792893 932.007755 0.359343673 1115.14841 183.5 749.574206 549.074206 384 183.5" />
-        <circle id="ball1" fill="#FF7802" cx="161.5" cy="926.5" r="146.5">
+        <circle id="ball1" fill="url(#stripes)" cx="161.5" cy="926.5" r="146.5">
             <animateTransform attributeName="transform" type="translate"
                 values="0 0;590 240;1180 0;1180 0" keyTimes="0;0.25;0.5;1"
                 keySplines="0.5 0 1 1;0 0 0.5 1;0 0 1 1" calcMode="spline" begin="0s" dur="1s"
