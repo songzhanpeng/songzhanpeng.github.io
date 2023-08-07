@@ -1,16 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1500px"
     height="1315px" viewBox="0 0 1500 1315" version="1.1">
     <defs>
-        <!-- 定义一个条纹图案 -->
-        <pattern id="stripes" patternUnits="userSpaceOnUse" width="20" height="40"
-            patternTransform="rotate(45)">
-            <rect x="0" y="0" width="10" height="40" fill="#FF7802" />
-            <rect x="10" y="0" width="10" height="40" fill="#FFFFFF" />
+        <!-- 引入ball图片作为一个pattern -->
+        <pattern id="ballPattern" width="1" height="1" patternContentUnits="objectBoundingBox">
+            <image xlink:href="ball.jpg" width="1" height="1" preserveAspectRatio="xMidYMid slice" />
         </pattern>
     </defs>
     <title>logo</title>
     <g id="logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <circle id="ball2" fill="url(#stripes)" cx="161.5" cy="926.5" r="146.5">
+        <circle id="ball2" fill="url(#ballPattern)" cx="161.5" cy="926.5" r="146.5">
             <animateTransform attributeName="transform" type="translate"
                 values="1180 0;1180 0;590 240;0 0" keyTimes="0;0.5;0.75;1"
                 keySplines="0 0 1 1;0.5 0 1 1;0 0 0.5 1" calcMode="spline" begin="0s" dur="1s"
@@ -26,7 +24,7 @@
             id="body" fill="#000000" />
         <polygon id="hair" fill="#989898"
             points="567.140656 0.359343673 749.574206 182.792893 932.007755 0.359343673 1115.14841 183.5 749.574206 549.074206 384 183.5" />
-        <circle id="ball1" fill="url(#stripes)" cx="161.5" cy="926.5" r="146.5">
+        <circle id="ball1" fill="url(#ballPattern)" cx="161.5" cy="926.5" r="146.5">
             <animateTransform attributeName="transform" type="translate"
                 values="0 0;590 240;1180 0;1180 0" keyTimes="0;0.25;0.5;1"
                 keySplines="0.5 0 1 1;0 0 0.5 1;0 0 1 1" calcMode="spline" begin="0s" dur="1s"
