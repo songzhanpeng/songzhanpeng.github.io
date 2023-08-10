@@ -1,0 +1,90 @@
+{
+    "chitose": {
+        "jsonPath": "https://songzhanpeng.github.io/packages/live2d-widget-model-chitose/assets/chitose.model.json",
+        "modelName": "chitose"
+    },
+    "epsilon2_1": {
+        "jsonPath": "https://songzhanpeng.github.io/packages/live2d-widget-model-epsilon2_1/assets/Epsilon2.1.model.json",
+        "modelName": "Epsilon2.1"
+    },
+    "gf": {
+        "jsonPath": "https://songzhanpeng.github.io/packages/live2d-widget-model-gf/assets/Gantzert_Felixander.model.json",
+        "modelName": "Gantzert_Felixander"
+    },
+    "haru01": {
+        "jsonPath": "https://songzhanpeng.github.io/packages/live2d-widget-model-haru/01/assets/haru01.model.json",
+        "modelName": "haru01"
+    },
+    "haru02": {
+        "jsonPath": "https://songzhanpeng.github.io/packages/live2d-widget-model-haru/02/assets/haru02.model.json",
+        "modelName": "haru02"
+    },
+    "haruto": {
+        "jsonPath": "https://songzhanpeng.github.io/packages/live2d-widget-model-haruto/assets/haruto.model.json",
+        "modelName": "haruto"
+    },
+    "hibiki": {
+        "jsonPath": "https://songzhanpeng.github.io/packages/live2d-widget-model-hibiki/assets/hibiki.model.json",
+        "modelName": "hibiki"
+    },
+    "hijiki": {
+        "jsonPath": "https://songzhanpeng.github.io/packages/live2d-widget-model-hijiki/assets/hijiki.model.json",
+        "modelName": "hijiki"
+    },
+    "izumi": {
+        "jsonPath": "https://songzhanpeng.github.io/packages/live2d-widget-model-izumi/assets/izumi.model.json",
+        "modelName": "izumi"
+    },
+    "koharu": {
+        "jsonPath": "https://songzhanpeng.github.io/packages/live2d-widget-model-koharu/assets/koharu.model.json",
+        "modelName": "koharu"
+    },
+    "miku": {
+        "jsonPath": "https://songzhanpeng.github.io/packages/live2d-widget-model-miku/assets/miku.model.json",
+        "modelName": "miku"
+    },
+    "ni-j": {
+        "jsonPath": "https://songzhanpeng.github.io/packages/live2d-widget-model-ni-j/assets/ni-j.model.json",
+        "modelName": "ni-j"
+    },
+    "nico": {
+        "jsonPath": "https://songzhanpeng.github.io/packages/live2d-widget-model-nico/assets/nico.model.json",
+        "modelName": "nico"
+    },
+    "nietzsche": {
+        "jsonPath": "https://songzhanpeng.github.io/packages/live2d-widget-model-nietzsche/assets/nietzche.model.json",
+        "modelName": "nietzsche"
+    },
+    "nipsilon": {
+        "jsonPath": "https://songzhanpeng.github.io/packages/live2d-widget-model-nipsilon/assets/nipsilon.model.json",
+        "modelName": "nipsilon"
+    },
+    "nito": {
+        "jsonPath": "https://songzhanpeng.github.io/packages/live2d-widget-model-nito/assets/nito.model.json",
+        "modelName": "nito"
+    },
+    "shizuku": {
+        "jsonPath": "https://songzhanpeng.github.io/packages/live2d-widget-model-shizuku/assets/shizuku.model.json",
+        "modelName": "shizuku"
+    },
+    "tororo": {
+        "jsonPath": "https://songzhanpeng.github.io/packages/live2d-widget-model-tororo/assets/tororo.model.json",
+        "modelName": "tororo"
+    },
+    "tsumiki": {
+        "jsonPath": "https://songzhanpeng.github.io/packages/live2d-widget-model-tsumiki/assets/tsumiki.model.json",
+        "modelName": "tsumiki"
+    },
+    "unitychan": {
+        "jsonPath": "https://songzhanpeng.github.io/packages/live2d-widget-model-unitychan/assets/unitychan.model.json",
+        "modelName": "unitychan"
+    },
+    "wanko": {
+        "jsonPath": "https://songzhanpeng.github.io/packages/live2d-widget-model-wanko/assets/wanko.model.json",
+        "modelName": "wanko"
+    },
+    "z16": {
+        "jsonPath": "https://songzhanpeng.github.io/packages/live2d-widget-model-z16/assets/z16.model.json",
+        "modelName": "z16"
+    }
+}
