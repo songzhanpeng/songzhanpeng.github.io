@@ -14,10 +14,10 @@ import "./custom.css";
 export default {
   // 使用扩展运算符继承 DefaultTheme 对象的属性
   ...DefaultTheme,
-  
+
   // 使用自定义布局替换默认布局
   Layout: MyLayout,
-  
+
   // 增强应用程序，注册全局组件
   enhanceApp(ctx) {
     // 调用 DefaultTheme 的 enhanceApp 函数

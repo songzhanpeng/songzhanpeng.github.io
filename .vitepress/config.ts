@@ -42,7 +42,7 @@ async function config() {
     lastUpdated: false,
     themeConfig: {
       // repo: "yinyuejun/homeSite",
-      logo: "/avator.png",
+      logo: "/ikun.svg",
       avator:'/avator.png',
       search: {
         provider: 'local'
